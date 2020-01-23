@@ -11,6 +11,9 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  public email: string;
+  public password: string;
+
   constructor(
     public afAuth: AngularFireAuth,
     private router: Router,
@@ -20,21 +23,33 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  onLogin(): void {
+    this.authService.loginEmailUser(this.email, this.password)
+      .then( (res) => {
+        this.onLoginRedirect();
+      }).catch(err => console.log('err', err.message));
+  }
+
   onLoginGoogle(): void {
     this.authService.loginGoogleUser()
     .then((res) => {
-      console.log('resUser', res);
-      this.router.navigate(['admin', 'list-books']);
-    }).catch(err => console.log('err', err));
+      this.onLoginRedirect();
+      }).catch(err => console.log('err', err.message));
   }
 
-  onLoginFacebook() {
-    this.authService.loginFacebookUser();
-    this.router.navigate(['admin', 'list-books']);
+  onLoginFacebook(): void {
+    this.authService.loginFacebookUser()
+    .then((res) => {
+      this.onLoginRedirect();
+    }).catch(err => console.log('err', err.message));
   }
 
   onLogout() {
-    this.afAuth.auth.signOut();
+    this.authService.logoutUser();
+  }
+
+  onLoginRedirect() {
+    this.router.navigate(['admin', 'list-books']);
   }
 
 }
