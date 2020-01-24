@@ -5,14 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: 'AIzaSyA_wJWzHJyhE0mA2YtlpQk0qeMNUOt3QAw',
-    authDomain: 'bookstore-firebase-add88.firebaseapp.com',
-    databaseURL: 'https://bookstore-firebase-add88.firebaseio.com',
-    projectId: 'bookstore-firebase-add88',
-    storageBucket: 'bookstore-firebase-add88.appspot.com',
-    messagingSenderId: '477035547836',
-    appId: '1:477035547836:web:b5f23e0dd4b7d692af94b9',
-    measurementId: 'G-X4E5NNK9BE'
+    apiKey: "AIzaSyAbGSFC8MpazpaDcCoOWEZYNPo6XOuyWmQ",
+    authDomain: "ecosistemaespinaco.firebaseapp.com",
+    databaseURL: "https://ecosistemaespinaco.firebaseio.com",
+    projectId: "ecosistemaespinaco",
+    storageBucket: "ecosistemaespinaco.appspot.com",
+    messagingSenderId: "167738073668",
+    appId: "1:167738073668:web:c778246507861ea2529211"
   }
 };
 
